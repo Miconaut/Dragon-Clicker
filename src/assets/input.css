@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Grobold';
+    src: url('./src/font/GROBOLD.ttf');
+}
+
+@layer components {
+    .component {
+        @apply w-full h-full bg-lightBg rounded-lg;
+    }
+
+    .values {
+        @apply p-2 flex flex-row items-center gap-4 bg-darkBg border-2 border-darkBorder rounded-lg;
+    }
+        .values img {
+            @apply w-10 h-auto;
+        }
+        .values p {
+            @apply w-12 text-white;
+        }
+
+    .item {
+        @apply w-36 h-36 grid grid-cols-[100%] grid-rows-[70%_30%] justify-center bg-darkBg border-2 border-darkBorder rounded-lg shadow-[5px_-5px_20px_rgba(128,90,88,1)] hover:scale-105;
+    }
+        .item div {
+            @apply px-5;
+        }
+        .item .food {
+            @apply w-full h-full py-3 col-start-1 col-end-2 row-start-1 row-end-2 flex justify-center items-center;
+        }
+            .item .food div {
+                @apply w-12 h-12 p-3 flex justify-center items-center absolute z-10 text-black text-center bg-lightRed bg-opacity-70 rounded-full;
+            }
+            .item .food img {
+                @apply w-auto h-full relative;
+            }
+        .item .price {
+            @apply w-full h-full py-3 flex flex-row justify-center items-center gap-3 cursor-pointer border-t-2 border-darkBorder hover:bg-darkBgHover;
+        }
+            .item .price p {
+                @apply text-white;
+            }
+            .item .price img {
+                @apply w-auto h-full;
+            }
+
+    .button {
+        @apply px-5 py-3 uppercase text-white bg-darkBg border-2 border-darkBorder rounded-lg;
+    }
+    .button.enabled {
+        @apply cursor-pointer opacity-100 hover:bg-darkBgHover;
+    }
+    .button.disabled {
+        @apply cursor-no-drop opacity-75;
+    }
+
+    .dragon {
+        @apply w-full h-full cursor-pointer hover:scale-90;
+    }
+    .dragon img {
+        @apply w-[550px] h-auto drop-shadow-[25px_10px_15px_rgba(128,90,88,1)];
+    }
+
+    .full {
+        @apply shadow-[0px_0px_10px_2px] shadow-green
+    }
+}
